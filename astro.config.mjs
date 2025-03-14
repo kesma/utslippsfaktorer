@@ -24,10 +24,6 @@ export default defineConfig({
           label: "Energi",
           items: [{ label: "Elektrisitet", slug: "energi/elektrisitet" }],
         },
-        {
-          label: "Reference",
-          autogenerate: { directory: "reference" },
-        },
       ],
     }),
   ],
