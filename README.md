@@ -1,4 +1,8 @@
-# Starlight Starter Kit: Basics
+# Utslippsfaktorer
+Content hub for Norwegian emission factors used to calculate greenhouse gas emissions.
+Built with starlight, see documentation below.
+
+## Starlight Starter Kit: Basics
 
 [![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
 
