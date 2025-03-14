@@ -1,5 +1,5 @@
 ---
-title: Utslippsfaktorer forklart
+title: Hva er en utslippsfaktor?
 description: Forklaring av utslippsfaktorer
 ---
 
