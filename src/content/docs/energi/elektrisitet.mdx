@@ -1,27 +1,33 @@
 ---
-title: Elektrisitet  
-description: Utslippsfaktorer for elektrisitet  
+title: Elektrisitet
+description: Utslippsfaktorer for elektrisitet
 ---
 
 ## Utslippsfaktorer for elektrisitet
 
-import { CardGrid, Card } from '@astrojs/starlight/components';
+import { CardGrid, Card } from "@astrojs/starlight/components";
 
 <CardGrid>
   <Card title="NVE" icon="star">
-    NVE (Norges vassdrags- og energidirektorat) beregner hvert år hvor store utslipp som kommer fra strømmen som faktisk er levert i Norge.  
+    NVE (Norges vassdrags- og energidirektorat) beregner hvert år utslipp som kommer fra strømmen som faktisk er levert i Norge.  
     👉 [Se utslippsfaktorer hos NVE](https://www.nve.no/energi/energisystem/kraftproduksjon/hvor-kommer-stroemmen-fra/)
   </Card>
 
-  <Card title="AIB" icon="star">
-    AIB (Association of Issuing Bodies) administrerer systemet for opprinnelsesgarantier i Europa.
-    👉 [Se utslippsfaktorer hos AIB](https://www.aib-net.org/facts/european-residual-mix)
-  </Card>
+{" "}
 
-  <Card title="Electricity Maps" icon="star">
-    Electricity Maps viser sanntidsdata for elektrisitetsproduksjon og CO₂e-utslipp i ulike land og regioner.
-    👉 [Gå til Electricity Maps](https://app.electricitymaps.com/)
-  </Card>
+<Card title="AIB" icon="star">
+  AIB (Association of Issuing Bodies) administrerer systemet for
+  opprinnelsesgarantier i Europa. 👉 [Se utslippsfaktorer hos
+  AIB](https://www.aib-net.org/facts/european-residual-mix)
+</Card>
+
+{" "}
+
+<Card title="Electricity Maps" icon="star">
+  Electricity Maps viser sanntidsdata for elektrisitetsproduksjon og
+  CO₂e-utslipp i ulike land og regioner. 👉 [Gå til Electricity
+  Maps](https://app.electricitymaps.com/)
+</Card>
 
   <Card title="IEA" icon="star">
     IEA (International Energy Agency) publiserer detaljerte utslippsfaktorer for strøm i ulike land.
@@ -31,7 +37,21 @@ import { CardGrid, Card } from '@astrojs/starlight/components';
 
 ---
 
+## Beregning av utslipp fra elektrisitet
+
+For å beregne utslipp fra elektrisitet, må du først innhente strømforbruket ditt fra strømleverandøren din.
+Deretter kan du multiplisere dette forbruket med en relevant utslippsfaktor for å få en nøyaktig beregning av utslippene.
+
+<Card title="Eksempel på beregning" icon="pencil">
+
+`strøm forbrukt i periode (kWh) * utslippsfaktor for periode (CO₂e/kWh) = totale utslipp for periode (CO₂e)`
+
+</Card>
+
+---
+
 ## Hvilken utslippsfaktor bør jeg bruke?
+
 Valg av utslippsfaktor avhenger av hva du ønsker å måle, **faktisk strømbruk per lokasjon** eller **strømforbuk basert på valgt energikilde**. Det finnes to hovedmetoder:
 
 ### 📍 Lokasjonsbasert metode
@@ -43,14 +63,17 @@ Denne metoden bruker utslippsfaktorer basert på strømmen som faktisk er levert
 
 ### 🧾 Markedsbasert metode
 
-Denne metoden tar hensyn til hvilken strøm du eller bedriften har *kjøpt* (for eksempel med opprinnelsesgarantier).
+Denne metoden tar hensyn til hvilken strøm du eller bedriften har _kjøpt_ (for eksempel med opprinnelsesgarantier).
 
 - Viser hva du faktisk støtter økonomisk (f.eks. fornybar strøm).
 - Her kan man bruke AIB sin residual mix som utslippsfaktorer.
 
-import { Aside } from '@astrojs/starlight/components';
+import { Aside } from "@astrojs/starlight/components";
 
-<Aside>🔍 Mange velger å rapportere begge deler: både lokasjonsbasert og markedsbasert – for å gi et helhetlig bilde.</Aside>
+<Aside>
+  🔍 Mange velger å rapportere begge deler: både lokasjonsbasert og
+  markedsbasert – for å gi et helhetlig bilde.
+</Aside>
 
 ---
 
@@ -66,14 +89,18 @@ Det finnes flere ulike kilder til utslippsfaktorer for elektrisitet, avhengig av
 
     - Electricity Maps – En visuell og interaktiv dataplattform som viser utslipp fra strømproduksjon i sanntid, per land eller region. Nyttig for oversikt og analyse, spesielt i prosjekter som ønsker kontinuerlig oppdatert informasjon.
 
+<Aside type="tip">
+  🔍 Du kan også kontakte leverandørene for å få spesifikke utslippsfaktorer som
+  kan gi en enda mer presis beregning.
+</Aside>
+
 ## Sammenligning av leverandører
 
-| Leverandør         | Type data                        | Passer best for                          | Fordeler                                           | Begrensninger                         |
-|--------------------|----------------------------------|------------------------------------------|----------------------------------------------------|----------------------------------------|
-| **NVE**            | Lokasjonsbasert, Norge           | Klimaregnskap i Norge                    | Offisiell, gratis, årlig oppdatering               | Kun Norge, ikke sanntid               |
-| **AIB**            | Markedsbasert (opprinnelsesgarantier) | Klimaregnskap Europa etter markedsbasert metode | Sporbarhet                | De har tall for produksjonsmiks men anbefales ikke for lokasjonsbasert utslipp     |
-| **IEA**            | Internasjonale faktorer for lokasjon og markedsbasert | Sammenligning på tvers av land           | Standardisert, global dekning                      | Kostnad, ikke sanntidsdata            |
-| **Electricity Maps** | Sanntidsdata, visuell fremstilling | Analyse og oversikt i sanntid          | Interaktiv, oppdatert, regional innsikt            | Kan variere i detaljnivå og metode    |
-
+| Leverandør           | Type data                                             | Passer best for                                 | Fordeler                                | Begrensninger                                                                  |
+| -------------------- | ----------------------------------------------------- | ----------------------------------------------- | --------------------------------------- | ------------------------------------------------------------------------------ |
+| **NVE**              | Lokasjonsbasert, Norge                                | Klimaregnskap i Norge                           | Offisiell, gratis, årlig oppdatering    | Kun Norge, ikke sanntid                                                        |
+| **AIB**              | Markedsbasert (opprinnelsesgarantier)                 | Klimaregnskap Europa etter markedsbasert metode | Sporbarhet                              | De har tall for produksjonsmiks men anbefales ikke for lokasjonsbasert utslipp |
+| **IEA**              | Internasjonale faktorer for lokasjon og markedsbasert | Sammenligning på tvers av land                  | Standardisert, global dekning           | Kostnad, ikke sanntidsdata                                                     |
+| **Electricity Maps** | Sanntidsdata, visuell fremstilling                    | Analyse og oversikt i sanntid                   | Interaktiv, oppdatert, regional innsikt | Kan variere i detaljnivå og metode                                             |
 
 ---
