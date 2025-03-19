@@ -7,6 +7,13 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "Utslippsfaktorer",
+      defaultLocale: "root",
+      locales: {
+        root: {
+          label: "Norsk",
+          lang: "no",
+        },
+      },
       social: {
         github: "https://github.com/kesma/utslippsfaktorer",
       },
