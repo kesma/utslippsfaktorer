@@ -29,7 +29,11 @@ export default defineConfig({
         },
         {
           label: "Energi",
-          items: [{ label: "Elektrisitet", slug: "energi/elektrisitet" }],
+          items: [
+            { label: "Elektrisitet", slug: "energi/elektrisitet" },
+            { label: "Fjernvarme", slug: "energi/fjernvarme" },
+            { label: "Fjernkjøling", slug: "energi/fjernkjoling" },
+          ],
         },
       ],
     }),

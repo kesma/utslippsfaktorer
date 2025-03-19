@@ -1,0 +1,43 @@
+---
+title: Fjernvarme
+description: Utslippsfaktorer for fjernvarme
+---
+
+## Utslippsfaktorer for fjernvarme
+
+import { Card } from "@astrojs/starlight/components";
+
+<Card title="Fjernkontrollen" icon="star">
+  Fjernkontrollen.no er en tjeneste levert av næringsorganisasjonen Norsk
+  Fjernvarme. De leverer beregnet utslipp for ulike fjernvarmeaktører og
+  områder, og har også en gjennomsnittsfaktor for Norge. 👉 [Se utslippsfaktorer
+  hos Fjernkontrollen](https://www.fjernkontrollen.no/co2/)
+</Card>
+---
+
+## Beregning av utslipp fra fjernvarme
+
+For å beregne utslipp fra fjernvarme, må du først innhente strømforbruket ditt fra leverandøren din (eks. kWh).
+Deretter kan du multiplisere dette forbruket med en relevant utslippsfaktor for å få en nøyaktig beregning av utslippene.
+
+<Card title="Eksempel på beregning" icon="pencil">
+
+`fjernvarme forbrukt i periode (kWh) * utslippsfaktor for periode (gCO₂e/kWh) = totale utslipp for periode (gCO₂e)`
+
+</Card>
+
+## Hvilken utslippsfaktor bør jeg bruke?
+
+Utslippsfaktor for fjernvarme bør brukes i denne rekkefølgen:
+
+    1. Bruk leverandørens egne tall, hvis de finnes.
+    2. Bruk stedsspesifikke tall for lokasjonen.
+    3. Hvis ikke annet er tilgjengelig, bruk nasjonale gjennomsnittstall for Norge.
+
+---
+
+## Hva er fjernvarme?
+
+Fjernvarme bygger på ideen om å bruke energi som er til overs i samfunnet, og som ville gått til spille hvis ikke fjernvarmesystemer hadde tatt energien i bruk.
+Et fjernvarmesystem distribuerer varmt vann fra energisentraler til husstander og i teorien kan det meste av energi brukes til å produsere fjernvarme.
+De vanligste kildene er gjenvunnet varme og biobrensel.
