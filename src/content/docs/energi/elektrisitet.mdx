@@ -40,7 +40,10 @@ import { CardGrid, Card } from "@astrojs/starlight/components";
 ## Beregning av utslipp fra elektrisitet
 
 For å beregne utslipp fra elektrisitet, må du først innhente strømforbruket ditt fra strømleverandøren din (eks. kWh).
-Deretter kan du multiplisere dette forbruket med en relevant utslippsfaktor for å få en nøyaktig beregning av utslippene.
+Deretter kan du multiplisere dette forbruket med en relevant utslippsfaktor for å få en beregning av utslippene.
+Fra GHG-protokollen er det to metoder man for å beregne klimautslipp fra strøm:
+
+### 📍 Lokasjonsbasert metode
 
 <Card title="Eksempel på beregning" icon="pencil">
 
@@ -48,11 +51,17 @@ Deretter kan du multiplisere dette forbruket med en relevant utslippsfaktor for 
 
 </Card>
 
+### 🧾 Markedsbasert metode
+
+<Card title="Eksempel på beregning" icon="pencil">
+
+`strøm forbrukt i periode ikke fornybar(kWh) * utslippsfaktor for periode (gCO₂e/kWh) + fornybar strøm med opprinnelsesgarantier (kWh) * 0 (gCO₂e/kWh) = totale utslipp for periode (gCO₂e)`
+
+</Card>
+
 ---
 
 ## Hvilken utslippsfaktor bør jeg bruke?
-
-Valg av utslippsfaktor avhenger av hva du ønsker å måle, **faktisk strømbruk per lokasjon** eller **strømforbuk basert på valgt energikilde**. Det finnes to hovedmetoder:
 
 ### 📍 Lokasjonsbasert metode
 
@@ -63,7 +72,7 @@ Denne metoden bruker utslippsfaktorer basert på strømmen som faktisk er levert
 
 ### 🧾 Markedsbasert metode
 
-Denne metoden tar hensyn til hvilken strøm du eller bedriften har _kjøpt_ (for eksempel med opprinnelsesgarantier).
+Denne metoden tar hensyn til hvilken strøm du eller bedriften har _kjøpt_ (strøm med opprinnelsesgarantier for fornybar energi).
 
 - Viser hva du faktisk støtter økonomisk (f.eks. fornybar strøm).
 - Her kan man bruke AIB sin residual mix som utslippsfaktorer.
@@ -72,7 +81,8 @@ import { Aside } from "@astrojs/starlight/components";
 
 <Aside>
   🔍 Mange velger å rapportere begge deler: både lokasjonsbasert og
-  markedsbasert – for å gi et helhetlig bilde.
+  markedsbasert – for å gi et helhetlig bilde. Hvis klimaregnskap føres i tråd
+  med GHG-protokollen, må begge metodene benyttes.
 </Aside>
 
 ---
@@ -83,7 +93,7 @@ Det finnes flere ulike kilder til utslippsfaktorer for elektrisitet, avhengig av
 
     - NVE – Tilbyr offisielle utslippsfaktorer for strøm levert i Norge, basert på det faktiske kraftmikset. Brukes ofte ved lokasjonsbasert rapportering.
 
-    - AIB – Tilrettelegger for markedsbasert rapportering gjennom systemet for opprinnelsesgarantier. Gjør det mulig å spore hvilken energikilde strømmen kommer fra, uavhengig av fysisk levering.
+    - AIB – Tilrettelegger for markedsbasert rapportering gjennom systemet for opprinnelsesgarantier.
 
     - IEA – Den internasjonale energibyrået publiserer detaljerte utslippsfaktorer for elektrisitet i ulike land. Brukes ofte til sammenligninger på tvers av land og i større klimaregnskap.
 
